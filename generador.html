@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Generador de Excusas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    #excusa {
+      font-size: 1.5rem;
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    }
+
+    button {
+      background-color: #00c853;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #00b247;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎭 Generador de Excusas</h1>
+  <div id="excusa">Haz clic en el botón para generar una excusa...</div>
+  <button onclick="generarExcusa()">Generar Excusa</button>
+
+  <script>
+    const sujetos = ["Mi perro", "El vecino", "Un ovni", "Mi abuela", "El repartidor", "Un hacker", "El profesor"];
+    const verbos = ["rompió", "comió", "escondió", "formateó", "perdió", "se llevó", "quemó"];
+    const objetos = ["mi tarea", "mi ordenador", "la clave del Wi-Fi", "el informe", "mi mochila", "el coche", "el almuerzo"];
+    const lugares = ["en el parque", "en casa", "en el trabajo", "en la escuela", "en el baño", "en el supermercado", "en el espacio"];
+
+    function generarExcusa() {
+      const sujeto = sujetos[Math.floor(Math.random() * sujetos.length)];
+      const verbo = verbos[Math.floor(Math.random() * verbos.length)];
+      const objeto = objetos[Math.floor(Math.random() * objetos.length)];
+      const lugar = lugares[Math.floor(Math.random() * lugares.length)];
+
+      const excusa = `${sujeto} ${verbo} ${objeto} ${lugar}.`;
+      document.getElementById("excusa").textContent = excusa;
+    }
+  </script>
+</body>
+</html>
